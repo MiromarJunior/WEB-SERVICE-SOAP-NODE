@@ -1,0 +1,17 @@
+{
+  "name": "web-service-soap-node",
+  "version": "1.0.0",
+  "description": "Projeto WEB Service com SOAP node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miromar Junior",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "oracledb": "^5.5.0",
+    "soap": "^0.44.0"
+  }
+}

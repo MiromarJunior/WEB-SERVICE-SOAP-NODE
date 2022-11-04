@@ -1,0 +1,107 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://org.ws/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://org.ws/" name="WebServiceNodeJs">
+    <types>
+        <xs:schema xmlns:tns="http://org.ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://org.ws/">
+        <xs:element name="listaUsuarioCPF" type="tns:listaUsuarioCPF"/>
+        <xs:element name="listaUsuarioCPFResponse" type="tns:listaUsuarioCPFResponse"/>
+        <xs:element name="listaUsuarioID" type="tns:listaUsuarioID"/>
+        <xs:element name="listaUsuarioIDResponse" type="tns:listaUsuarioIDResponse"/>
+        <xs:element name="listarTodosUsuarios" type="tns:listarTodosUsuarios"/>
+        <xs:element name="listarTodosUsuariosResponse" type="tns:listarTodosUsuariosResponse"/>
+        <xs:complexType name="listaUsuarioID">
+        <xs:sequence>
+        <xs:element name="id" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="listaUsuarioIDResponse">
+        <xs:sequence>
+        <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="listarTodosUsuarios">
+        <xs:sequence/>
+        </xs:complexType>
+        <xs:complexType name="listarTodosUsuariosResponse">
+        <xs:sequence>
+        <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="listaUsuarioCPF">
+        <xs:sequence>
+        <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="listaUsuarioCPFResponse">
+        <xs:sequence>
+        <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        </xs:complexType>
+        </xs:schema>
+    </types>
+    <message name="listaUsuarioID">
+    <part name="parameters" element="tns:listaUsuarioID"/>
+    </message>
+    <message name="listaUsuarioIDResponse">
+    <part name="parameters" element="tns:listaUsuarioIDResponse"/>
+    </message>
+    <message name="listarTodosUsuarios">
+    <part name="parameters" element="tns:listarTodosUsuarios"/>
+    </message>
+    <message name="listarTodosUsuariosResponse">
+    <part name="parameters" element="tns:listarTodosUsuariosResponse"/>
+    </message>
+    <message name="listaUsuarioCPF">
+    <part name="parameters" element="tns:listaUsuarioCPF"/>
+    </message>
+    <message name="listaUsuarioCPFResponse">
+    <part name="parameters" element="tns:listaUsuarioCPFResponse"/>
+    </message>
+    <portType name="WebServiceNodeJs">
+    <operation name="listaUsuarioID">
+    <input wsam:Action="http://org.ws/WebServiceNodeJs/listaUsuarioIDRequest" message="tns:listaUsuarioID"/>
+    <output wsam:Action="http://org.ws/WebServiceNodeJs/listaUsuarioIDResponse" message="tns:listaUsuarioIDResponse"/>
+    </operation>
+    <operation name="listarTodosUsuarios">
+    <input wsam:Action="http://org.ws/WebServiceNodeJs/listarTodosUsuariosRequest" message="tns:listarTodosUsuarios"/>
+    <output wsam:Action="http://org.ws/WebServiceNodeJs/listarTodosUsuariosResponse" message="tns:listarTodosUsuariosResponse"/>
+    </operation>
+    <operation name="listaUsuarioCPF">
+    <input wsam:Action="http://org.ws/WebServiceNodeJs/listaUsuarioCPFRequest" message="tns:listaUsuarioCPF"/>
+    <output wsam:Action="http://org.ws/WebServiceNodeJs/listaUsuarioCPFResponse" message="tns:listaUsuarioCPFResponse"/>
+    </operation>
+    </portType>
+    <binding name="WebServiceNodeJsPortBinding" type="tns:WebServiceNodeJs">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="listaUsuarioID">
+    <soap:operation soapAction=""/>
+    <input>
+    <soap:body use="literal"/>
+    </input>
+    <output>
+    <soap:body use="literal"/>
+    </output>
+    </operation>
+    <operation name="listarTodosUsuarios">
+    <soap:operation soapAction=""/>
+    <input>
+    <soap:body use="literal"/>
+    </input>
+    <output>
+    <soap:body use="literal"/>
+    </output>
+    </operation>
+    <operation name="listaUsuarioCPF">
+    <soap:operation soapAction=""/>
+    <input>
+    <soap:body use="literal"/>
+    </input>
+    <output>
+    <soap:body use="literal"/>
+    </output>
+    </operation>
+    </binding>
+    <service name="WebServiceNodeJs">
+    <port name="WebServiceNodeJsPort" binding="tns:WebServiceNodeJsPortBinding">
+    <soap:address location="http://localhost:9000/wsdl"/>
+    </port>
+    </service>
+    </definitions>
