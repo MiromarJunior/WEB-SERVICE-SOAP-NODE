@@ -15,16 +15,16 @@ soap.createClient(url, function (err, client) {
   }
 
   
-//   client.listarTodosUsuarios(function (err, res) {
-//     if (err)
-//       throw err;     
-//     console.log(res); 
-//   });
-  client.listaUsuarioCPF(args,function (err, res) {
+  client.listarTodosUsuarios(function (err, res) {
     if (err)
       throw err;     
     console.log(res); 
-  }); 
+  });
+  // client.listaUsuarioCPF(args,function (err, res) {
+  //   if (err)
+  //     throw err;     
+  //   console.log(res); 
+  // }); 
   
   
 //   client.listaUsuarioID(args,function (err, res) {

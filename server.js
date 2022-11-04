@@ -55,7 +55,6 @@ const getAllUsuarios = async () => {
         }
     }
 }
-
 const getUsuarioCPF = async (args) => {
     let connection = await oracledb.getConnection(dbConfig);
     try {
